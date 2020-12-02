@@ -1,0 +1,204 @@
+.search__app_container {
+    width: 100%;
+    height: 100vh;
+
+    .search-form {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 60px 1fr 60px;
+        padding: 5px;
+
+        input[type="text"] {
+            font-family: Montserrat;
+            width: 100%;
+            padding: 10px 5px;
+            margin-right: 80px;
+            border: none;
+            border-left: 1px #2C2929 solid;
+            outline: none;
+            color: black;
+            font-weight: 500;
+            font-size: .9rem;
+            z-index: 11;
+        }
+
+        input[type="number"] {
+            font-family: Montserrat;
+            font-weight: 500;
+            padding: 10px;
+            outline: none;
+            border: #1DB954;
+        }
+
+        .search__btn_app {
+            margin: auto;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 10px 5px;
+            border: none;
+            outline: none;
+            background-color: #1DB954;
+            color: white;
+            text-align: center;
+            width: 50px;
+            font-size: 1rem;
+
+            i {
+                margin: auto;
+            }
+        }
+    }
+
+    .playlists_dropdown_app {
+        width: 100%;
+        padding: 5px;
+
+        select {
+            font-family: Montserrat;
+            font-weight: 500;
+            padding: 5px 5px;
+            width: 96%;
+            cursor: pointer;
+            outline: none;
+            font-size: 1rem;
+            appearance: none;
+            background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important;
+        }
+    }
+
+
+    .song_item_app {
+        max-width: 95%;
+        overflow: hidden;
+
+
+        .song_item__cont {
+            width: 100%;
+            height: 69px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #2C2929;
+            margin-top: 20px;
+            border-radius: 38px;
+            position: relative;
+
+            .btn-playlist {
+                border-radius: 50%;
+                width: 25px;
+                cursor: pointer;
+                height: 25px;
+                border: 1px solid white;
+                background-color: transparent;
+                color: white;
+                font-size: .6rem;
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translate(-10px, -50%);
+            }
+
+            .song__details_app {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .song__main_details {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    overflow: hidden;
+                    margin: auto;
+
+                    .song_title_app {
+                        text-transform: capitalize;
+                        font-size: .9rem;
+                        font-weight: 700;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        width: 200px;
+                        height: 1.2em;
+                        white-space: nowrap;
+                        position: relative;
+
+                        &:hover {
+                            color: #1DB954;
+                        }
+
+                        &::after {
+                            content: attr(data-artist);
+                            text-transform: capitalize;
+
+                            ::first-letter {
+                                text-transform: lowercase;
+                            }
+
+                            font-size: .6rem;
+                            font-weight: 200;
+                            margin-left: 5px;
+                            color: white;
+                            opacity: .7;
+                        }
+                    }
+                }
+
+                .album__name {
+                    text-transform: capitalize;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 170px;
+                    font-size: .7rem;
+                    opacity: .6;
+                    margin-top: 5px;
+                    font-weight: 200;
+                    white-space: nowrap;
+                }
+
+            }
+
+            .img__app_container {
+                max-width: 50px;
+                max-height: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 20px;
+                margin-left: 10px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.tooltiptext {
+    background-color: rgb(24, 23, 23) !important;
+    font-size: .7rem !important;
+    padding: 5px 5px !important;
+    transition: 100ms ease-in-out;
+}
+
+.error {
+    user-select: none;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: .3;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-top: 20px;
+
+    .svg__telescope {
+        max-width: 100px;
+        margin-top: 20px;
+        opacity: .5;
+    }
+}
