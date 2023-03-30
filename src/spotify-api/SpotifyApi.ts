@@ -135,4 +135,39 @@ export class SpotifyApi {
             })
         })
     }
+
+    // get user stats
+    getUserStats = () => {
+        // https://developer.spotify.com/documentation/web-api/reference/#/operations/get-users-top-artists-and-tracks
+        const options = {
+            url: `https://api.spotify.com/v1/me/top/artists?limit=10&time_range=long_term`,
+            headers: {
+                "Authorization": `Bearer ${this.token}`
+            },
+            json: true
+        }
+        return new Promise((resolve, reject) => {
+            request.get(options, (err, res) => {
+                if (res.statusCode === 200) resolve(res.body)
+                reject(res.body)
+            })
+        })
+    }
+
+    getArtist = (artist_id: string) => {
+        const options = {
+            url: `https://api.spotify.com/v1/artists/${artist_id}`,
+            headers: {
+                "Authorization": `Bearer ${this.token}`
+            },
+            json: true
+        }
+
+        return new Promise((resolve, reject) => {
+            request.get(options, (err, res) => {
+                if (res.statusCode === 200) resolve(res.body)
+                reject(res.body)
+            })
+        })
+    }
 }

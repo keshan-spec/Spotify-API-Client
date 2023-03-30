@@ -7,6 +7,7 @@ export const Home: React.FC = () => {
             <Link to="/a"> Protected</Link>
             <Link to="/v"> Public</Link>
             <Link to="/search"> Search</Link>
+            <Link to="/stats"> Stats</Link>
         </div>
     </header>);
 }

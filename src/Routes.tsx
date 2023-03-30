@@ -8,6 +8,8 @@ import { Protected } from './pages/Protected';
 import { Public } from './pages/Public';
 import { checkAuth } from './RouteAuth';
 import { Search } from './Components/Search/Search';
+import { Stats } from './Components/Stats/Stats';
+import { Artist } from './Components/Stats/Artist';
 
 
 const NotFound: React.FC<BaseGuardProps> = ({ error }) => (
@@ -29,6 +31,8 @@ const Routes: React.FC = () => {
             <GuardedRoute path="/v" exact component={Public} />
             <GuardedRoute path="/" exact component={Home} />
             <GuardedRoute path="/search" exact component={Search} />
+            <GuardedRoute path="/stats" exact component={Stats} />
+            <GuardedRoute path="/artist" exact component={Artist} />
             <GuardedRoute path="*" component={NotFound} />
           </Switch>
         </GuardProvider>
